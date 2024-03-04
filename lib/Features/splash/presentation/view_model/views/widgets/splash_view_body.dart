@@ -17,11 +17,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(minutes: 1),
+      duration: const Duration(seconds: 1),
     );
     SlidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 1), end: const Offset(0, 0))
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
             .animate(animationController);
+    animationController.forward();
   }
 
   @override
