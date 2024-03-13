@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly/core/utils/styles.dart';
@@ -25,35 +26,43 @@ class BestSellerListViewItem extends StatelessWidget {
           const SizedBox(
             width: 30,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.5,
-                child: const Text(
-                  'Harry Potter and Goblet of Fire',
-                  style: Styles.textStyle20,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  child: const Text(
+                    'Harry Potter and Goblet of Fire',
+                    style: Styles.textStyle20,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-              const Text(
-                'J.K. Rowling',
-                style: Styles.textStyle14,
-              ),
-              const SizedBox(
-                height: 3,
-              ),
-               Text(
-                '19.99' '\$',
-                style: Styles.textStyle20.copyWith(
-                 fontWeight: FontWeight.bold,
+                const SizedBox(
+                  height: 3,
                 ),
-              ),
-            ],
+                const Text(
+                  'J.K. Rowling',
+                  style: Styles.textStyle14,
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      '19.99' '\$',
+                      style: Styles.textStyle20.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const Spacer(),
+                    const BookRating(),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),
