@@ -12,7 +12,7 @@ class CustomListView extends StatelessWidget {
         itemCount: 10,
         itemBuilder: (context, index) {
           return const Padding(
-            padding: EdgeInsets.only(right: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: 5.0),
             child: CustomListViewItem(),
           );
         },
