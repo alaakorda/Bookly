@@ -1,14 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomBookDetailsAppBar extends StatelessWidget {
   const CustomBookDetailsAppBar({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
-        Icon(Icons.close),
-        Spacer(),
-        Icon(Icons.shopping_cart_outlined),
+        GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: const Icon(Icons.close)),
+        const Spacer(),
+        const Icon(Icons.shopping_cart_outlined),
       ],
     );
   }
