@@ -20,12 +20,12 @@ class ServerFailure extends Failures {
         return ServerFailure.fromReponse(
             dioError.response!.statusCode!, dioError.response!.data);
       case DioExceptionType.cancel:
-      return ServerFailure('Request Cancelled');
-      
+        return ServerFailure('Request Cancelled');
+
       case DioExceptionType.connectionError:
-        return 
+        return ServerFailure('connection Error');
       case DioExceptionType.unknown:
-        // TODO: Handle this case.
+        return ServerFailure('Oops! Something went wrong!');
     }
   }
   factory ServerFailure.fromReponse(int statusCode, dynamic response) {
