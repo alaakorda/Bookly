@@ -14,7 +14,7 @@ class BestSellerBooksCubit extends Cubit<BestSellerBooksState> {
     result.fold((failure) {
       emit(BestSellerBooksFailure(failure.toString()));
     }, (books) {
-      emit(BestSellerBooksSuccess(books: books));
+      emit(BestSellerBooksSuccess( books));
     });
   }
 }

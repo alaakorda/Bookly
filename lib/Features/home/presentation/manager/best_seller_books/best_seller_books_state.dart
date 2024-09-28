@@ -14,7 +14,7 @@ class BestSellerBooksLoading extends BestSellerBooksState {}
 class BestSellerBooksSuccess extends BestSellerBooksState {
   final List<BookModel> books;
 
-  const BestSellerBooksSuccess({required this.books});
+  const BestSellerBooksSuccess(this.books);
   
 }
 
